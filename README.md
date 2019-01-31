@@ -9,3 +9,9 @@
 * clearRect()
 * fillText()
 * ellipse()
+
+#### 01_canvas
+* e.preventDefault()
+* ctx.beginPath()
+* e.offsetX()
+* e.offsetY()
