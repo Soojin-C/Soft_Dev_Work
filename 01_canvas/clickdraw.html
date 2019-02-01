@@ -1,25 +1,31 @@
 <!--
-Soojin Choi
-SoftDev2 pd08
-K00 -- I See a Red Door...
-2019-01-30
+OnePlusOneIsThree -- Soojin Choi, Tabassum Fabiha, Isaac Jon
+SoftDev2 pd7
+K01 - ...and I want to Paint It Better
+2019-01-31
 -->
 
 <!DOCTYPE html>
 <html>
+<head>
   <style>
     #slate {border: 1px solid black}
   </style>
-  <h2 id = "type" > squares! </h2>
-      <div>
-	<canvas height = "600"
-		width = "600" id = "slate">
-	  Canvas
-	</canvas>
-      </div>
-      <button id = "clear"> Clear </button>
-      <button id = "toggle"> Toggle </button>
+</head>
 
+<body>
+      <h1> Canvas </h1>
+      <h2> Demo </h2>
+      <div>
+          <canvas onclick="drawShape(event)" height="600" width="600" id="slate">
+            dis dat alt txt
+          </canvas>
+      </div>
+      <button id="clear"> clear </button>
+      <button id="toggle"> toggleState </button>
+
+      <p id="msg"> Current State: BOX</p>
       <script src="clickdraw.js"></script>
+</body>
 
 </html>
