@@ -15,3 +15,7 @@
 * ctx.beginPath()
 * e.offsetX()
 * e.offsetY()
+
+#### 02_canvas
+* ctx.moveTo(x, y);
+* ctx.lineTo(X, Y);
