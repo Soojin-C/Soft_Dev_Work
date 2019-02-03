@@ -57,6 +57,8 @@ var drawShape = function(evt)
 
 var clear = function(e) { // clears the canvas
 
+    x = -1;
+    y = -1;
     ctx.clearRect(0, 0, c.width, c.height);
 }
 
