@@ -1,8 +1,7 @@
-
 // OnePlusOneIsThree -- Soojin Choi, Tabassum Fabiha
 // SoftDev2 pd7
-// K01 - ...and I want to Paint It Better
-// 2019-01-31
+// K02 - Connecting the Dots
+// 2019-02-03
 
 const c = document.getElementById("playground");
 const ctx = c.getContext("2d");
