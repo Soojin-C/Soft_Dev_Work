@@ -52,6 +52,7 @@ var clear = function (e) {
 
 var stopIt = function() {
     window.cancelAnimationFrame(requestID);
+    requestID = 0;
 };
 
 dotButton.addEventListener('click', function(e){
