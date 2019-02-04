@@ -54,7 +54,16 @@ var stopIt = function() {
     window.cancelAnimationFrame(requestID);
 };
 
-dotButton.addEventListener('click', drawDot);
+dotButton.addEventListener('click', function(e){
+
+  if (requestID == 0){
+    drawDot();
+  }
+  else{
+    e.preventDefault();
+  }
+
+});
 stopButton.addEventListener('click', stopIt);
 
 // window.requestAnimationFrame() moves to next frame
