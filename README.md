@@ -31,7 +31,9 @@
 * ctx.lineTo(X, Y);
 
 #### 03_canvas-anim
-* Connects the dots created with a line
+* Animates a growing/shrinking dot in a canvas
+* Animation starts when the button is pressed
+* Animation stops when the stop button is pressed
 * = = = = = = = = = = = = = = = = = = = = = = 
 * window.requestAnimationFrame(callback);
 * window.cancelAnimationFrame(id);
