@@ -30,8 +30,7 @@
 * ctx.moveTo(x, y);
 * ctx.lineTo(X, Y);
 
-#### 03_canvas
-01_canvas + 
+#### 03_canvas-anim
 * Connects the dots created with a line
 * = = = = = = = = = = = = = = = = = = = = = = 
 * window.requestAnimationFrame(callback);
