@@ -68,14 +68,16 @@ var dvdLogoSetup = function() {
 
     var logo = new Image();
     logo.src = "logo_dvd.jpg"
-	  ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
+	  //ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
 	  //ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
 
 	var dvdLogo = function() {
 
 		clear();
 
-	    if (rectX + rectWidth == c.width ){
+      ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
+
+      if (rectX + rectWidth == c.width ){
 			xvel = xvel * -1;
 	    }
 	    if (rectX == 0){
@@ -91,7 +93,6 @@ var dvdLogoSetup = function() {
 		rectX += xvel;
 		rectY += yvel;
 
-    ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
 		//ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
 
 		requestID = window.requestAnimationFrame(dvdLogo);
