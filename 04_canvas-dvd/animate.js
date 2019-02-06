@@ -3,13 +3,55 @@
 //K #04 -- What is it saving the screen from?
 //2019-02-07 (Due)
 
-var requestID ;
 var c = document.getElementById('playground');
 var ctx = c.getContext('2d');
+
 var dvdButton = document.getElementById("dvd");
+var dotButton = document.getElementById('circle');
+var stopButton = document.getElementById('stop');
+
+var requestID = 0;
+var radius = 0;
+var growing = true;
+
 var clear = function (e) {
     console.log("clearing");
     ctx.clearRect(0, 0, c.width, c.height);
+};
+
+function drawDot() {
+
+    window.cancelAnimationFrame(requestID);
+    clear();
+
+    if (radius == c.width / 2){
+        growing = false;
+    }
+    if (radius == 0){
+        growing = true;
+    }
+
+
+    ctx.beginPath();
+    ctx.arc(c.width / 2, c.height / 2,
+           radius, 0, 2 *Math.PI);
+    clear();
+    ctx.stroke();
+    ctx.fill();
+
+    if (growing){
+        radius = radius + 1;
+    }
+    else{
+        radius = radius - 1;
+    }
+
+    requestID = window.requestAnimationFrame(drawDot);
+}
+
+var stopIt = function() {
+    window.cancelAnimationFrame(requestID);
+    requestID = 0;
 };
 
 var dvdLogoSetup = function() {
@@ -28,11 +70,11 @@ var dvdLogoSetup = function() {
     //logo src = "logo_dvd.jpg"
 	//ctx.drawImage(?);
 	ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
-	
+
 	var dvdLogo = function() {
 
 		clear();
-		
+
 	    if (rectX + rectWidth == c.width ){
 			xvel = xvel * -1;
 	    }
@@ -45,15 +87,18 @@ var dvdLogoSetup = function() {
 	    if (rectY == 0){
 			yvel = yvel * -1;
 	    }
-		
+
 		rectX += xvel;
 		rectY += yvel;
-	    
+
 		ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
-		
+
 		requestID = window.requestAnimationFrame(dvdLogo);
 	}
 	dvdLogo()
 
 }
+
+dotButton.addEventListener('click', drawDot);
 dvdButton.addEventListener('click', dvdLogoSetup);
+stopButton.addEventListener('click', stopIt);
