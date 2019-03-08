@@ -20,17 +20,31 @@ collection we have initialized.
 import json
 import pymongo
 
+#connection.drop_database(db)
+
 def connect(ip):
+	connection.drop_database(db)
 	SERVER_ADDR = ip
 	connection = pymongo.MongoClient(SERVER_ADDR)
 	db = connection.oneplusoneisthree
 	collection = db.movies
+	create("data/movies.json")
 
 def create(filename):
     with open(filename) as f:
         j = json.load(f)
 
     collection.insert(j)
+
+SERVER_ADDR = "157.230.214.11"
+connection = pymongo.MongoClient(SERVER_ADDR)
+try:
+	connection.drop_database(db)
+except:
+	pass
+db = connection.oneplusoneisthree
+collection = db.movies
+create("data/movies.json")
 
 def in_year(y):
     obj = collection.find({"year" : y})

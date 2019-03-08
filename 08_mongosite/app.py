@@ -10,8 +10,7 @@ app.secret_key=os.urandom(32)
 
 @app.route("/")
 def home():
-    mango.connect("157.230.214.11")
-	return render_template("home.html")
+    return render_template("home.html")
 
 @app.route("/ip", methods = ["GET", "POST"])
 def getIp():
