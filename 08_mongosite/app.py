@@ -19,6 +19,21 @@ def getIp():
     mango.connect(ip)
     return redirect(url_for("home"))
 
+@app.route("/find_year", methods = ["GET", "POST"])
+def getYear():
+    print(request.form)
+    Year = request.form["year"]
+    try:
+        int(Year)
+    except:
+        return redirect(url_for("home"))
+    data = mango.in_year(Year)
+    #print("data: ===============")
+    #print(data)
+    for each in data:
+        print (each["title"])
+    return render_template ("home.html", y = True, year = Year, movies = data)
+
 if __name__ == "__main__":
     app.debug = True
     app.run()

@@ -1,5 +1,28 @@
-some html stuff
-<form action = "/ip" method = "POST">
-  Enter IP: <input type="text" name = "ip"></input>
-  <input type="submit" name = "Submit"></input>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+<title>K08</title>
+</head>
+
+<body>
+
+  <form action = "/ip" method = "POST">
+    Enter IP: <input type="text" name = "ip"></input>
+    <input type="submit" name = "Submit"></input>
+  </form>
+
+  <form action = "/find_year" method = "POST">
+    Find the first 30 movies in the year: <input type="text" name = "year"></input>
+    <input type="submit" name = "Submit"></input>
+  </form>
+  {% if y %}
+  The Movies of Year {{ year }}:
+  <br>
+  {% for name in movies %}
+    {{ name["title"] }}
+    <br>
+  {% endfor %}
+  {% endif %}
+
+</body>
+</html>
