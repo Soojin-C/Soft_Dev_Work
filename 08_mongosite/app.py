@@ -1,3 +1,8 @@
+#Team Mongoing -- Soojin Choi, Isaac Jon, Ahnaf Kazi
+#SoftDev2 pd7
+#K08 -- Ay Mon, Go Git It From Yer Flask
+#2019-03-07
+
 import os
 
 from flask import Flask, render_template, request,flash, session,url_for,redirect
