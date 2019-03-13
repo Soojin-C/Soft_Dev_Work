@@ -37,3 +37,27 @@
 * = = = = = = = = = = = = = = = = = = = = = = 
 * window.requestAnimationFrame(callback);
 * window.cancelAnimationFrame(id);
+
+#### 04_canvas-anim
+* 
+* = = = = = = = = = = = = = = = = = = = = = = 
+* 
+
+#### 06_canvas-anim
+* 
+* = = = = = = = = = = = = = = = = = = = = = = 
+* 
+
+#### 07_canvas-anim
+* 
+* = = = = = = = = = = = = = = = = = = = = = = 
+* 
+#### 08_canvas-anim
+* 
+* = = = = = = = = = = = = = = = = = = = = = = 
+* 
+
+#### 09_canvas-anim
+* 
+* = = = = = = = = = = = = = = = = = = = = = = 
+* 
