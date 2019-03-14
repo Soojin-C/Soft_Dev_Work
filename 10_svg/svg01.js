@@ -1,7 +1,7 @@
 // Soojin Choi
 // SoftDev pd07
-// K09 -- Connect the Dots
-// 2019-03-12
+// K10 -- Ask Circles [Change || Die]
+// 2019-03-13
 
 var pic = document.getElementById('vimage');
 var clear = document.getElementById("but_clear");
