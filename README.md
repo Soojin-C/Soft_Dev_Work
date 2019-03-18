@@ -39,14 +39,21 @@
 * window.cancelAnimationFrame(id);
 
 #### 04_canvas-anim
-* 
+03_canvas-anim + 
+* Animates a dvd logo that bounces on the side walls
 * = = = = = = = = = = = = = = = = = = = = = = 
-* 
+* ctx.arc(c.width / 2, c.height / 2, radius, 0, 2 *Math.PI);
+* var logo = new Image()
+* logo.src = "<image path>"
 
-#### 06_canvas-anim
-* 
+#### 06_mongo
+* Connecting to an already existing mongo db and getting information.
 * = = = = = = = = = = = = = = = = = = = = = = 
-* 
+* connection = pymongo.MongoClient(SERVER_ADDR)
+* db = connection.<db name>
+* collection = db.<collection name>
+* collection.find({"key" : <target>})
+* {"$and" : [{<This>} , {<That>}]}
 
 #### 07_canvas-anim
 * 
