@@ -17,63 +17,33 @@ var requestID = 0;
 var moving = false
 
 var changeLocation = function(e){
-  var current = e.target //The current element that triggered the EventListener
-  if (x == e.offsetX && y == e.offsetY && x != -1){
-e.preventDefault()}
-  if (!moving){
-    e.stopPropagation(); // prevents the parent eventListner from taking place
+    var current = e.target //The current element that triggered the EventListener
+    if (x == e.offsetX && y == e.offsetY && x != -1){
+	e.preventDefault()}
+    if (!moving){
+	e.stopPropagation(); // prevents the parent eventListner from taking place
 
-    var curr = e.target;
-    pic.removeChild(curr);
-    console.log("rand_loc");
+	var curr = e.target;
+	pic.removeChild(curr);
+	console.log("rand_loc");
 
-      var xrand = (Math.random() * 460) + 20;
-      var yrand = (Math.random() * 460) + 20;
+	var xrand = (Math.random() * 460) + 20;
+	var yrand = (Math.random() * 460) + 20;
 
-      var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      c.setAttribute("fill", "purple");
-      c.setAttribute('xvel', 1)
-      c.setAttribute('yvel', 1)
-      c.setAttribute('cx', xrand);
-      c.setAttribute('cy', yrand);
-      c.setAttribute("r", 20);
-      c.setAttribute("move", false);
+	var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+	c.setAttribute("fill", "purple");
+	c.setAttribute('xvel', 1)
+	c.setAttribute('yvel', 1)
+	c.setAttribute('cx', xrand);
+	c.setAttribute('cy', yrand);
+	c.setAttribute("r", 20);
+	c.setAttribute("move", false);
 
-      //console.log(xrand, yrand);
+	//console.log(xrand, yrand);
 
-      c.addEventListener("click", changeLocation);
-      pic.appendChild(c);
-  }
-
-var color_change = function(e){
-  var current = e.target //The current element that triggered the EventListener
-  var color = current.getAttribute("fill")
-
-  e.stopPropagation(); // prevents the parent eventListner from taking place
-
-  if (color == "purple"){
-    current.setAttribute("fill", "yellow")
-    console.log("color_change");
-  }
-  else{
-    var curr = e.target
-    pic.removeChild(curr)
-    console.log("rand_loc");
-
-    var xrand = (Math.random() * 460) + 20
-    var yrand = (Math.random() * 460) + 20
-
-    var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    c.setAttribute("fill", "purple");
-    c.setAttribute('cx', xrand)
-    c.setAttribute('cy', yrand)
-    c.setAttribute("r", 20);
-
-    console.log(xrand, yrand);
-
-    c.addEventListener("click", color_change)
-    pic.appendChild(c)
-  }
+	c.addEventListener("click", changeLocation);
+	pic.appendChild(c);
+    }
 
 }
 
@@ -81,140 +51,140 @@ var dots = function(e){
     if (x == e.offsetX && y == e.offsetY && x != -1){
 	e.preventDefault()}
 
-  var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-  c.setAttribute("fill", "purple");
-  c.setAttribute('cx', e.offsetX)
-  c.setAttribute('cy', e.offsetY)
-  c.setAttribute('xvel', 1)
-  c.setAttribute('yvel', 1)
-  c.setAttribute("r", 20);
-  c.setAttribute("move", moving);
+    var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute("fill", "purple");
+    c.setAttribute('cx', e.offsetX)
+    c.setAttribute('cy', e.offsetY)
+    c.setAttribute('xvel', 1)
+    c.setAttribute('yvel', 1)
+    c.setAttribute("r", 20);
+    c.setAttribute("move", moving);
 
-  x = e.offsetX;
-  y = e.offsetY;
+    x = e.offsetX;
+    y = e.offsetY;
 
-  //console.log(x)
-  //console.log(y)
-  console.log("init_dot")
+    //console.log(x)
+    //console.log(y)
+    console.log("init_dot")
 
-  c.addEventListener("click", changeLocation)
-  pic.appendChild(c);
-	//var current =
-	//c.setAttribute()
+    c.addEventListener("click", changeLocation)
+    pic.appendChild(c);
+    //var current =
+    //c.setAttribute()
 
 }
 
 var movingSetUp = function(e){
-  window.cancelAnimationFrame(requestID);
+    window.cancelAnimationFrame(requestID);
 
-  moving = true;
+    moving = true;
 
-  var moving = function(){
+    var moving = function(){
 
-    height = pic.getAttribute("height");
-    width = pic.getAttribute("width");
+	height = pic.getAttribute("height");
+	width = pic.getAttribute("width");
 
-    var current = pic.firstElementChild;
-    while (current != null){
-      var curr_x = parseInt(current.getAttribute("cx"));
-      var curr_y = parseInt(current.getAttribute("cy"));
-      var curr_r = parseInt(current.getAttribute("r"));
-      var xV = parseInt(current.getAttribute("xvel"));
-      var yV = parseInt(current.getAttribute("yvel"));
+	var current = pic.firstElementChild;
+	while (current != null){
+	    var curr_x = parseInt(current.getAttribute("cx"));
+	    var curr_y = parseInt(current.getAttribute("cy"));
+	    var curr_r = parseInt(current.getAttribute("r"));
+	    var xV = parseInt(current.getAttribute("xvel"));
+	    var yV = parseInt(current.getAttribute("yvel"));
 
-      if (curr_x + curr_r >= width ){
-        xV = xV * -1;
-			  current.setAttribute("xvel", xV );
+	    if (curr_x + curr_r >= width ){
+		xV = xV * -1;
+		current.setAttribute("xvel", xV );
 	    }
 	    if (curr_x <= curr_r){
-        xV = xV * -1;
-        current.setAttribute("xvel", xV );
+		xV = xV * -1;
+		current.setAttribute("xvel", xV );
 	    }
 	    if (curr_y + curr_r >= height ){
-        yV = yV * -1;
-			  current.setAttribute("yvel", yV );
+		yV = yV * -1;
+		current.setAttribute("yvel", yV );
 	    }
 	    if (curr_y <= curr_r){
-        yV = yV * -1;
-			  current.setAttribute("yvel", yV );
+		yV = yV * -1;
+		current.setAttribute("yvel", yV );
 	    }
 
-    //console.log(xV,yV, curr_x)
-		current.setAttribute("cx", curr_x + xV);
-		current.setAttribute("cy", curr_y + yV);
-    current.setAttribute("move", moving)
-    current = current.nextSibling
+	    //console.log(xV,yV, curr_x)
+	    current.setAttribute("cx", curr_x + xV);
+	    current.setAttribute("cy", curr_y + yV);
+	    current.setAttribute("move", moving)
+	    current = current.nextSibling
+	}
+	requestID = window.requestAnimationFrame(moving);
     }
-    requestID = window.requestAnimationFrame(moving);
-  }
-  moving()
+    moving()
 }
 
 var mysteryEffect = function(){
-  window.cancelAnimationFrame(requestID);
-  moving = true;
+    window.cancelAnimationFrame(requestID);
+    moving = true;
 
-  var mystery = function(){
+    var mystery = function(){
 
-    height = pic.getAttribute("height");
-    width = pic.getAttribute("width");
+	height = pic.getAttribute("height");
+	width = pic.getAttribute("width");
 
-    var current = pic.firstElementChild;
-    //console.log(current)
-    while (current != null){
-      var curr_x = parseInt(current.getAttribute("cx"));
-      var curr_y = parseInt(current.getAttribute("cy"));
-      var curr_r = parseInt(current.getAttribute("r"));
-      var xV = parseInt(current.getAttribute("xvel"));
-      var yV = parseInt(current.getAttribute("yvel"));
+	var current = pic.firstElementChild;
+	//console.log(current)
+	while (current != null){
+	    var curr_x = parseInt(current.getAttribute("cx"));
+	    var curr_y = parseInt(current.getAttribute("cy"));
+	    var curr_r = parseInt(current.getAttribute("r"));
+	    var xV = parseInt(current.getAttribute("xvel"));
+	    var yV = parseInt(current.getAttribute("yvel"));
 
-      if((curr_x <= (width - 250)) && (curr_x => 150) ){
-        current.setAttribute("fill", "blue")
-        //current.setAttribute("xvel", 2 * xV)
-        //current.setAttribute("yvel", 2 * yV)
-      }
-      else{
-        current.setAttribute("fill", "purple")
-        //current.setAttribute("xvel", 1 * (xV/2))
-        //current.setAttribute("yvel", 1 * (yV/2))
-      }
-      var xV = parseInt(current.getAttribute("xvel"));
-      var yV = parseInt(current.getAttribute("yvel"));
+	    if((curr_x <= (width - 250)) && (curr_x => 150) ){
+		current.setAttribute("fill", "blue")
+		//current.setAttribute("xvel", 2 * xV)
+		//current.setAttribute("yvel", 2 * yV)
+	    }
+	    else{
+		current.setAttribute("fill", "purple")
+		//current.setAttribute("xvel", 1 * (xV/2))
+		//current.setAttribute("yvel", 1 * (yV/2))
+	    }
+	    var xV = parseInt(current.getAttribute("xvel"));
+	    var yV = parseInt(current.getAttribute("yvel"));
 
-      if (curr_x + curr_r >= width ){
-        xV = xV * -1;
-			  current.setAttribute("xvel", xV );
+	    if (curr_x + curr_r >= width ){
+		xV = xV * -1;
+		current.setAttribute("xvel", xV );
 	    }
 	    if (curr_x <= curr_r){
-        xV = xV * -1;
-        current.setAttribute("xvel", xV );
+		xV = xV * -1;
+		current.setAttribute("xvel", xV );
 	    }
 	    if (curr_y + curr_r >= height ){
-        yV = yV * -1;
-			  current.setAttribute("yvel", yV );
+		yV = yV * -1;
+		current.setAttribute("yvel", yV );
 	    }
 	    if (curr_y <= curr_r){
-        yV = yV * -1;
-			  current.setAttribute("yvel", yV );
+		yV = yV * -1;
+		current.setAttribute("yvel", yV );
 	    }
 
-    //console.log(xV,yV, curr_x)
-		current.setAttribute("cx", curr_x + xV);
-		current.setAttribute("cy", curr_y + yV);
-    current.setAttribute("move", moving)
-    current = current.nextSibling
+	    //console.log(xV,yV, curr_x)
+	    current.setAttribute("cx", curr_x + xV);
+	    current.setAttribute("cy", curr_y + yV);
+	    current.setAttribute("move", moving)
+	    current = current.nextSibling
+	}
+	requestID = window.requestAnimationFrame(mystery);
     }
-    requestID = window.requestAnimationFrame(mystery);
-  }
-  mystery()
+    mystery()
 }
 
 
 var clearScreen = function(e){
-  window.cancelAnimationFrame(requestID);
+    window.cancelAnimationFrame(requestID);
     var current = pic.firstChild
     while (current != null){
-  console.log("clearing")
+	console.log("clearing")
 	//console.log(current)
 	pic.removeChild(current)
 	current = pic.firstChild
@@ -225,13 +195,13 @@ var clearScreen = function(e){
 }
 
 var test = function(){
-  console.log(pic);
-  var hey = pic.firstElementChild
-  console.log(hey.getAttribute("cx"));
-  console.log(hey)
-  var woah = hey.nextSibling
-  console.log(woah);
-  console.log(woah.nextSibling);
+    console.log(pic);
+    var hey = pic.firstElementChild
+    console.log(hey.getAttribute("cx"));
+    console.log(hey)
+    var woah = hey.nextSibling
+    console.log(woah);
+    console.log(woah.nextSibling);
 }
 
 pic.addEventListener("click", dots);
