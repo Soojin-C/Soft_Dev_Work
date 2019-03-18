@@ -48,6 +48,7 @@
 
 #### 06_mongo
 * Connecting to an already existing mongo db and getting information.
+* Using pymongo
 * = = = = = = = = = = = = = = = = = = = = = = 
 * connection = pymongo.MongoClient(SERVER_ADDR)
 * db = connection.<db name>
@@ -55,16 +56,41 @@
 * collection.find({"key" : <target>})
 * {"$and" : [{<This>} , {<That>}]}
 
-#### 07_canvas-anim
-* 
+#### 07_mongo
+* Taking json data and placing it into a db created through python
 * = = = = = = = = = = = = = = = = = = = = = = 
-* 
-#### 08_canvas-anim
-* 
-* = = = = = = = = = = = = = = = = = = = = = = 
-* 
+* collection.insert(json.load(<json>))
 
-#### 09_canvas-anim
-* 
+#### 08_mongosite
+* A flask app frontend to take in an ip and use data 
+
+#### 09_svg
+* Connect the dots with an svg instead
+* Clearing functionality
 * = = = = = = = = = = = = = = = = = = = = = = 
-* 
+* var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+* circle.setAttribute({'fill','cx','cy','r'}, <val>)
+* var connect = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+* connect.setAttribute({'x1', 'x2', 'y1', 'y2', 'stroke'}, val)
+* e.offsetX, e.offsetY --> Works;
+* pic.appendChild(circle);
+* pic.removeChild()
+* pic.firstChild
+  
+#### 10_svg
+* First Click, creates a circle
+* Second Click and purple --> colorChange
+* Second Click and yellow --> moved to a random location, turned purple
+* = = = = = = = = = = = = = = = = = = = = = = 
+* e.stopPropagation();
+* e.target;
+* <item>.getAttribute("name")
+  
+#### 11_svg
+* move -> Animates all the circles to moving a constant velocity.
+* clear -> clears
+* ? -> left half color changes
+* Create any attribute for an svg child(ex: xvel, yvel)
+* = = = = = = = = = = = = = = = = = = = = = = 
+* current = pic.firstElementChild
+* current.nextSibling
