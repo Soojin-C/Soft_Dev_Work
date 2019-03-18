@@ -87,6 +87,7 @@
 * <item>.getAttribute("name")
   
 #### 11_svg
+* Kind of not working 24/7
 * move -> Animates all the circles to moving a constant velocity.
 * clear -> clears
 * ? -> left half color changes
