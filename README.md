@@ -95,3 +95,7 @@
 * = = = = = = = = = = = = = = = = = = = = = = 
 * current = pic.firstElementChild
 * current.nextSibling
+
+#### 12_svg
+* 00 -> basic html with hardcoded div elements
+* 01 -> basic html with d3 to use js to create the same effect as 00 without hardcoding it
