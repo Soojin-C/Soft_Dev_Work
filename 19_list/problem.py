@@ -50,4 +50,10 @@ print("cart")
 print(cart([1,2],["red", "white"]))
 
 def sortforset(set):
+    pass
+
+def triple(num):
+    return [(a,b,c) for a in range(num) for b in range(a) for c in range(b) if a*a == b*b + c*c]
+
+print(triple(10))
     
