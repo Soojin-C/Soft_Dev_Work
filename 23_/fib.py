@@ -21,24 +21,30 @@ print(greet()) #  v1
 # memoization -> process of storing previously calculated results to avoid recalculation
 
 # fib
-def fib(fxn):
+def memoization(fxn):
     val = {}
     def inner(n):
-        
-        return 0
+        if n not in val:
+            print(n)
+            val[n] = fxn(n)
+        return val[n]
     return inner
 
-
-def helper():
+@memoization
+def fib(n):
     if n == 0:
         return 0
     elif n == 1:
         return 1
+    #elif n in val:
+    #    return val[n]
     else:
-        return helper(n-1) + helper(n-2)
+        calc = fib(n-1) + fib(n-2)
+    #    val[n] = calc
+        return calc
 
-helper = fib(helper)
-print(helper(40))
+#fib = memoization(fib)
+print(fib(7))
 
 
 
