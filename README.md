@@ -99,3 +99,46 @@
 #### 12_svg
 * 00 -> basic html with hardcoded div elements
 * 01 -> basic html with d3 to use js to create the same effect as 00 without hardcoding it
+* var chart = d3.select(".chart");
+* var bar = chart.selectAll("div");
+* var barUpdate = bar.data(data);
+* var barEnter = barUpdate.enter().append("div");
+
+#### 13_svg
+* Replicating the bars with labels 
+
+#### 14_svg
+* Some practice d3 (Not really sure)
+* div.update()
+* div.exit()
+* div.enter()
+* d3.selectAll("section").append("p");
+
+#### 15_svg
+* Creating a dot plot using d3 of a data set
+* Not working tsv attemp for data collection
+* NOT a great example for a graph. Try project ssessalg. Lots of graphs there
+
+#### 16_listcomp
+* 
+
+#### 17_listcomp
+* 
+
+#### 18_listcomp
+* 
+
+#### 19_listcomp
+* 
+
+#### 20_anon-reduce
+* 
+
+#### 21_js-mfr
+* 
+#### 22_closure
+* 
+
+#### 23_memoize
+* 
+
