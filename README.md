@@ -120,25 +120,52 @@
 * NOT a great example for a graph. Try project ssessalg. Lots of graphs there
 
 #### 16_listcomp
-* 
+* Simple list comprehension
+* Password checker using listcomp
 
 #### 17_listcomp
-* 
+* looper way and listcomp way
+* num1 --> Multiple of 22 listed out.(EX. ["0", "22", "44", "66", "88"])
+* num2 --> [7, 17, 27, 37, 47]
+* num3 --> [0, 0, 0, 0, 1, 2, 0, 2, 4]
+* num4 --> composite numbers to x
+* num5 --> primes to x
+* num6 --> all factors of x
+* num7 --> reverse a matrix 
 
 #### 18_listcomp
-* 
+* wow pythagorean triples generator in listcomp
+* missing quick sort in listcomp
 
 #### 19_listcomp
-* 
+* Union 
+* Intersection
+* Complement
+* Symmetric Difference
+* Cartesian product
+* ..... all in listcomp!
 
 #### 20_anon-reduce
-* 
+* freq of a word 
+* freq of a group of words 
+* most freq word (slow)
+* reduce(lambda x,y: x+y, list)
+* ... in list comp
 
 #### 21_js-mfr
-* 
+* temp.map(function(n) {return 1})
+* data.filter(function(n) {return n["schoolyear"] == 20102011}
+* data.reduce(sum) #similar to reduce() see 20_
+
 #### 22_closure
-* 
+* closure functions (a fxn inside of a fxn)
+* word repition outer-takes word, inner-num of times repeated
+* counter outer-init inner-adds one
+* contains outer-should contain var inner-takes list
+* nonlocal x
 
 #### 23_memoize
-* 
+* memoization -> process of storing previously calculated results to avoid recalculation
+* fib using memoization structure
+* @memoization == fib = memoization(fib)
 
